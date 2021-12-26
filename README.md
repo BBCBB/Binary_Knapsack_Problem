@@ -1,1 +1,1 @@
-# Binary_Knapsack_Branch-Bound
+# Binary_Knapsack_Branch_and_Bound
