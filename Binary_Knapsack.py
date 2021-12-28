@@ -12,7 +12,7 @@ def Decider(x):
          }[x]
 randef=input('would you like to generate a random problem or a predefined one is ok? 1 or other: ')
 if randef=='1':
-    n=int(input('Please enter the number of items you would like to put in the knapsack: '))+1
+    n=int(input('Please enter the number of items you would like to fit in the knapsack: '))+1
     import random
 # Problem Generator Function
     def Problem_Generator(n):
@@ -138,7 +138,7 @@ class Queue:     # We need to have control over what happens in the queue of nod
 Traversal_queue = Queue()
 prt = node_gen(-1, 0, 0) # The Parent (ancestor) node in the tree (here it's the root)
                      # 1st argument: the level of the node in the tree. 
-                     # this level represents items we are trying to put it the knapsack
+                     # this level represents items we are trying to fit in the knapsack
                      # 2nd argument: the value of the item
                      # 3rd argument: the weight of the item
                      # obviously the value and weight would be zero for the root
@@ -189,6 +189,6 @@ while Traversal_queue.length != 0:
         print('\n The node ({}, {}, {}) is a deadend'.format(prt.level,prt.value,prt.weight))
     
 
-print('\n Optimal items is/are {} \n {} items from {} items are put in the knapsack'.format(select,len(select),n))
+print('\n Optimal items is/are {} \n {} items from {} items are fit in the knapsack'.format(select,len(select),n))
 print('\n Objective Function Value is " {} " and\n the number of the nodes in the tree is " {} "'.format(Objective,nodes))
 print(' Execution time is {} seconds'.format(round(time.time() - start_time,5)))
