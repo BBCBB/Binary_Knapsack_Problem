@@ -1,4 +1,15 @@
+import sys
 import time
+Decision=input('''Please choose the desired traversal strategy to visit the nodes\n 
+ 1:Best First\n 2:Depth First\n 3:Breadth First\n 4: Exit\n Only type the number:''')
+if Decision == '4':
+    sys.exit()
+def Decider(x):
+    return {
+         '1': 'BestFirst',
+         '2': 'DepthFirst',
+         '3': 'BreadthFirst'
+         }[x]
 randef=input('would you like to generate a random problem or a predefined one is ok? 1 or other: ')
 if randef=='1':
     n=int(input('Please enter the number of items you would like to put in the knapsack: '))+1
@@ -36,7 +47,7 @@ else:
 print(' A Knapsack problem is genrated\n C={} \n w={}'.format(C,w))
 print(' v={}\n sum_items={}\n vperw={}'.format(v,sum_items,vperw))
 #------------------------------------------------------------------------------
-traversal='BestF'
+traversal=Decider(Decision)
 start_time = time.time()
 #The class of items to define their attributes
 class node_gen:
@@ -73,7 +84,7 @@ class Queue:     # We need to have control over what happens in the queue of nod
         self.Q = []             # Q to have access to traversed nodes
         self.length = 0         # length to see whether the queue is empty or not
     def add(self, node):        # add method: we define this to add traversed nodes to the queue
-        if traversal=='BestF':  # if you choose Best first traversal strategy,
+        if traversal=='BestFirst':  # if you choose Best first traversal strategy,
                                 # the algorithm will place the added nodes in order based their
                                 # their optimistic objective
             i=0                 # we should set the default value of i to zero since the queue can be empty
@@ -84,22 +95,22 @@ class Queue:     # We need to have control over what happens in the queue of nod
             self.Q.insert(i,node)
             self.length += 1
             
-        elif traversal=='DepthF' or traversal=='BreadthF':  # if you choose to use DepthFirst or BreadthFirst strategies
+        elif traversal=='DepthFirst' or traversal=='BreadthFirst':  # if you choose to use DepthFirst or BreadthFirstirst strategies
                                                             # you should add new nodes to the queue chronologically
             self.Q.insert(self.length,node)
             self.length += 1
                 
     def remove(self):           
       # Selecting the traversal branch as Best First to proceed with exploration  
-        if traversal=='BestF':
-            if self.length != 0:            # the BestFirst strategy tends to choose 
+        if traversal=='BestFirst':
+            if self.length != 0:            # the BestFirstirst strategy tends to choose 
                                             # the most optimistic node to begin exploration
                 result = self.Q.pop()
                 self.length -= 1
                 return result
           
      # Selecting the traversal branch as Breadth First to proceed with exploration           
-        elif traversal=='BreadthF':         # the BreadthFirst strategy tends to choose
+        elif traversal=='BreadthFirst':         # the BreadthFirst strategy tends to choose
                                             # the node that has stayed in the queue the longest
             if self.length != 0:
                 result = self.Q.pop(0)
@@ -107,7 +118,7 @@ class Queue:     # We need to have control over what happens in the queue of nod
                 return result
 
      # Selecting the traversal branch as Depth First to proceed with exploration
-        elif traversal=='DepthF':           # the DepthFirst strategy tends to go 
+        elif traversal=='DepthFirst':           # the DepthFirst strategy tends to go 
                                             # deep enough until it reaches a deadend
                                             # so long as there is a left side branch,
                                             # we would not go to right
