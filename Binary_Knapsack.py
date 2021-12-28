@@ -26,7 +26,7 @@ if randef=='1':
         #     C=float('inf')                   # option 2 to generate C
         # while sum_items<C:    
         #     C=random.randint(18,35)                             
-            vperw=[]                           # value per weight for each item
+            vperw=[]                           # value per unit weight for each item
         for i,j in enumerate(w):
             vperw.append(round(v[i]/j,2))
         return [C,w,v,sum_items,vperw]
