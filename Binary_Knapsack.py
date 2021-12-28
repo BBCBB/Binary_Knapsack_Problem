@@ -103,7 +103,7 @@ class Queue:     # We need to have control over what happens in the queue of nod
     def remove(self):           
       # Selecting the traversal branch as Best First to proceed with exploration  
         if traversal=='BestFirst':
-            if self.length != 0:            # the BestFirstirst strategy tends to choose 
+            if self.length != 0:            # the BestFirst strategy tends to choose 
                                             # the most optimistic node to begin exploration
                 result = self.Q.pop()
                 self.length -= 1
