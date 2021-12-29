@@ -76,7 +76,7 @@ def LRS(node):
                 Opt_val = Opt_val + v[j]  
             else:
                 Opt_val=Opt_val + round((C-totalweight)*vperw[j],3)
-                Break
+                break
     return Opt_val                                            #Optimistic value
 
 #------------------------------------------------------------------------------
