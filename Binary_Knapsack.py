@@ -189,7 +189,11 @@ while Traversal_queue.length != 0:
     else:
         print('\n The node ({}, {}, {}) is a deadend'.format(prt.level,prt.value,prt.weight))
     
-
+decision_vector=[0]*n    
+for l in range(n):
+    if l in select:
+        decision_vector[l]=1
+print('\n The decision vector of the problem: {}'.format(decision_vector))
 print('\n Optimal items is/are {} \n {} items from {} items are fit in the knapsack'.format(select,len(select),n))
 print('\n Objective Function Value is " {} " and\n the number of the nodes in the tree is " {} "'.format(Objective,nodes))
 print(' Execution time is {} seconds'.format(round(time.time() - start_time,5)))
