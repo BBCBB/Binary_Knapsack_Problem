@@ -1,6 +1,7 @@
 # Binary_Knapsack_Branch_and_Bound
 There are different approaches to deal with the knapsack problem. 
-If you used the branch and bound method to solve the problem, the main steps would be:
-Linear relaxation of the problem: we should relax the constraint of the decision variable being discrete. in other words, we will have 0=<x<=1 instead of x in {0,1}.
+If you used the branch and bound method to solve the problem, you would have to use a kind of relaxation to calculate an optimistic value for the problem at each node. This way, you will be able to see whether it is rational to proceed with the current branch or not:
+Linear relaxation of the problem: we should relax the constraint of the discrete decision variable. In other words, we will have 0=<x<=1 instead of x in {0,1}.
 
-Moreover, you are provided with dynamic programming approach, which outperforms the branch and bound when the size of the problem grows in terms of solving time.
+Best First, Depth First, and Breadth-First methods are provided in the program. You can choose among them, but you should consider the fact that Breadth-First is not efficient compared to others in most cases. On the other hand, Best First Search is an informed search strategy since it uses the information provided by the problem. However, DFS and BFS are uninformed ones because they traverse the tree without any prior information. Generally, it depends on the circumstances of the problem to say which search strategy will perform better than others. We only know that Best First Strategy needs more space than the Depth First Strategy, while it expands fewer nodes to solve the problem. When the tree is wide, Breadth-First Search will not be an efficient approach, and when it's deep, DFS is not efficient.
+Moreover, you are provided with a dynamic programming approach, which outperforms the branch and bound when the size of the problem grows in terms of solving time.
