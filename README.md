@@ -7,4 +7,6 @@ Best First, Depth First, and Breadth-First methods are provided in the program. 
 
 You should consider the fact that Branch and Bound's solving time grows exponentially with the growth of the problem size, and hence it can take it a significant time to solve a large-scale problem. One approach to compensate for this issue is kind of constraint programming. In other words, you can begin the algorithm by checking whether there is any item that violates the constraint solely or not. In the following step you can remove the items that are not likely to be chosen by the algorithm. However, the result depends on the level to which you eliminate items before the algorithm begins. In many cases it performs fairly well if you eliminate some items that don't satisfy the criteria of the problem in advance based on their values and weights.
 
+The other approach to deal with the complexity of large-scale problems is to develop better optimistic solutions (smaller optimistic values). This way, the gap between the optimistic value and the objective achieved so far would be smaller and more nodes would be treated as deadends.
+
 Moreover, you are provided with a dynamic programming approach, which outperforms the branch and bound when the size of the problem grows in terms of solving time.
