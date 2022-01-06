@@ -6,11 +6,12 @@ if randef=='1':
     def Problem_Generator(n):
         w=[]                                   #weight of items
         v=[]                                   #value of each item
+        CC=0.8                                 #Capacity Coefficient
         for i in range(1,n):
             w.append(random.randint(2,10))
             v.append(random.randint(25,45))
             sum_items=sum(w)                   # sum of the items' weight
-            C=int(0.85*sum_items)              # option 1 to generate C
+            C=int(CC*sum_items)              # option 1 to generate C
         #     C=float('inf')                   # option 2 to generate C
         # while sum_items<C:    
         #     C=random.randint(18,35)                             
